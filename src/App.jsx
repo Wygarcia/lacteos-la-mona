@@ -192,7 +192,7 @@ window.open(url, "_blank");
       imagen={vacaYogur}
       nombre="Yogur Artesanal"
       descripcion="1 litro por unidad, 100% leche de vaca, alta calidad garantizada"
-      precio={2500}
+      precio={15000}
       boton="Seleccionar Sabor"
       onClick={() => setMostrarModal(true)}
     />
