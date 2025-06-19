@@ -186,43 +186,42 @@ window.open(url, "_blank");
       
     
       
-<main className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 place-items-center">
+<main className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
 
-  <div className="grid grid-cols-4 gap-[4px] w-full max-w-6xl">
-    <ProductoCard
-      imagen={vacaYogur}
-      nombre="Yogur Artesanal"
-      descripcion="1 litro por unidad, 100% leche de vaca, alta calidad garantizada"
-      precio={15000}
-      boton="Seleccionar Sabor"
-      onClick={() => setMostrarModal(true)}
-    />
-    <ProductoCard
-      imagen={leche}
-      nombre="Leche por Litro"
-      descripcion="Leche fresca por litro, pedidos por encargo"
-      precio={3000}
-      boton="Seleccionar Cantidad"
-      onClick={() => setMostrarModalLeche(true)}
-    />
-    <ProductoCard
-      imagen={flores}
-      nombre="Flores por Encargo"
-      descripcion="Hermosos arreglos florales para toda ocasión. ¡Cotiza ya!"
-      precio={0}
-      boton="Cotizar Flores"
-      onClick={() => setMostrarCotizacion('flores')}
-    />
-    <ProductoCard
-      imagen={acarreos}
-      nombre="Servicio de Acarreos"
-      descripcion="Te ayudamos a mover tus cosas con seguridad. ¡Cotiza tu acarreo!"
-      precio={0}
-      boton="Cotizar Acarreo"
-      onClick={() => setMostrarCotizacion('acarreos')}
-    />
-  </div>
+  <ProductoCard
+    imagen={vacaYogur}
+    nombre="Yogur Artesanal"
+    descripcion="1 litro c/u, leche de vaca calidad garantizada"
+    precio={15000}
+    boton="Seleccionar Sabor"
+    onClick={() => setMostrarModal(true)}
+  />
+  <ProductoCard
+    imagen={leche}
+    nombre="Leche por Litro"
+    descripcion="Leche fresca por litro, pedidos por encargo"
+    precio={3000}
+    boton="Seleccionar Cantidad"
+    onClick={() => setMostrarModalLeche(true)}
+  />
+  <ProductoCard
+    imagen={flores}
+    nombre="Flores por Encargo"
+    descripcion="Hermosos arreglos florales para toda ocasión. ¡Cotiza ya!"
+    precio={0}
+    boton="Cotizar Flores"
+    onClick={() => setMostrarCotizacion('flores')}
+  />
+  <ProductoCard
+    imagen={acarreos}
+    nombre="Servicio de Acarreos"
+    descripcion="Te ayudamos a mover tus cosas con seguridad. ¡Cotiza tu acarreo!"
+    precio={0}
+    boton="Cotizar Acarreo"
+    onClick={() => setMostrarCotizacion('acarreos')}
+  />
 </main>
+
 
 
 
@@ -240,17 +239,12 @@ window.open(url, "_blank");
 function ProductoCard({ imagen, nombre, descripcion, precio, boton, onClick }) {
   return (
     <div className="card w-full h-[280px] flex flex-col overflow-hidden bg-white rounded-xl shadow-lg transition-all duration-300 ease-in-out cursor-pointer group hover:bg-orange-100 hover:shadow-2xl hover:-translate-y-1 hover:rotate-[0.5deg]">
-
-
-
-<img
-  src={imagen}
-  alt={nombre}
-  className="mx-auto w-full h-[140px] object-contain rounded-t-lg bg-white transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-105"
-/>
-
-
-
+      
+      <img
+        src={imagen}
+        alt={nombre}
+        className="mx-auto w-full h-[140px] object-contain rounded-t-lg bg-white transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-105"
+      />
 
       <div className="p-2 flex flex-col justify-between flex-grow">
         <div>
@@ -262,13 +256,19 @@ function ProductoCard({ imagen, nombre, descripcion, precio, boton, onClick }) {
             </p>
           )}
         </div>
-        <button className="button text-sm py-1 px-2 mt-2" onClick={onClick}>
+        
+        {/* ✅ Botón corregido para móvil sin dañar escritorio */}
+        <button
+          className="button text-sm py-1 px-2 mt-2 sm:mt-auto"
+          onClick={onClick}
+        >
           {boton}
         </button>
       </div>
     </div>
   );
 }
+
 
 function renderModalSabores(sabores, saboresTemp, add, remove, confirmar, cerrar) {
   return (
