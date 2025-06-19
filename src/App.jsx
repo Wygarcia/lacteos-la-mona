@@ -186,7 +186,8 @@ window.open(url, "_blank");
       
     
       
-     <main className="mt-6 flex justify-center">
+<main className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 place-items-center">
+
   <div className="grid grid-cols-4 gap-[4px] w-full max-w-6xl">
     <ProductoCard
       imagen={vacaYogur}
