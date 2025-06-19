@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fondo general */
+body {
+  @apply bg-leche text-gray-800 font-cuerpo;
+}
+
+/* Inputs personalizados */
+.input {
+  @apply w-full border border-gray-300 rounded px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-primario;
+}
+
+select.input {
+  @apply w-full border border-gray-300 rounded px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-primario;
+}
+
+/* Botones primarios */
+.button {
+  @apply bg-primario text-white font-bold px-4 py-2 rounded hover:bg-orange-500 transition;
+}
+
+/* Botón secundario (gris) */
+.button-secondary {
+  @apply bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500 transition;
+}
+
+/* Título del logo */
+.logo-title {
+  @apply text-2xl font-titulo text-primario tracking-wide animate-pulse;
+}
+
+/* Tarjeta de producto */
+
+.card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 ease-in-out cursor-pointer hover:scale-105 hover:shadow-xl hover:bg-orange-100;
+}
+
+.card:hover img {
+  @apply scale-110 brightness-105;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Badges del carrito */
+.badge {
+  @apply absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-bounce;
+}
+
+/* Estilo general de modales */
+.modal {
+  @apply fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50;
+}
+
+/* Títulos internos */
+.section-title {
+  @apply text-lg font-bold text-vaca mb-2;
+}
+
+/* Panel del carrito deslizante */
+.carrito-panel {
+  @apply bg-white w-full max-w-md h-full shadow-2xl p-6 rounded-l-3xl overflow-y-auto relative animate-slide-in-right;
+}
+
+/* Botón cerrar */
+.close-button {
+  @apply absolute top-3 right-3 text-gray-500 hover:text-red-500 transition;
+}
+
+/* Título del carrito */
+.carrito-title {
+  @apply text-2xl font-bold text-center mb-4 text-primario;
+}
+
+/* Ítems del carrito */
+.carrito-item {
+  @apply flex justify-between items-center border-b border-gray-200 py-2;
+}
+
+/* Botón eliminar ítem */
+.eliminar-boton {
+  @apply text-red-500 hover:text-red-700 transition;
+}
+
+/* Animación slide-in */
+@layer utilities {
+  .animate-slide-in-right {
+    animation: slideInRight 0.4s ease-out forwards;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Colores personalizados */
+  .bg-leche {
+    background-color: #fffaf0;
+  }
+
+  .text-vaca {
+    color: #5c4033;
+  }
+
+  .font-titulo {
+    font-family: 'Fredoka', cursive;
+  }
+
+  .font-cuerpo {
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .bg-primario {
+    background-color: #f97316;
+  }
+
+  .text-primario {
+    color: #f97316;
+  }
+}
+
+/* Animación fade + scale */
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in.scale-in {
+    animation: fadeScaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/* Responsividad adicional */
+@media (max-width: 640px) {
+  .card {
+    width: 150px;
+    height: 290px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .card {
+    width: 160px;
+    height: 300px;
+  }
+}
