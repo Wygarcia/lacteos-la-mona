@@ -58,7 +58,7 @@ function App() {
   const agregarAlCarrito = () => {
     const saboresAAgregar = Object.entries(saboresTemp)
       .map(([sabor, cantidad]) =>
-        Array(cantidad).fill({ nombre: "Yogur Artesanal", sabor, precio: 2500, imagen: vacaYogur })
+        Array(cantidad).fill({ nombre: "Yogur Artesanal", sabor, precio: 15000, imagen: vacaYogur })
       )
       .flat();
     setCarrito((prev) => [...prev, ...saboresAAgregar]);
@@ -67,7 +67,7 @@ function App() {
   };
 
   const agregarLecheAlCarrito = () => {
-    const items = Array(cantidadLeche).fill({ nombre: "Leche por Litro", precio: 3000, imagen: leche });
+    const items = Array(cantidadLeche).fill({ nombre: "Leche por Litro", precio: 3500, imagen: leche });
     setCarrito((prev) => [...prev, ...items]);
     setCantidadLeche(0);
     setMostrarModalLeche(false);
@@ -114,7 +114,7 @@ ${carrito.map((item) => `- ${item.nombre}${item.sabor ? ` - ${item.sabor}` : ""}
 • Comentarios: ${formulario.comentarios || "Ninguno"}
 `;
 
-const url = `https://wa.me/573023416912?text=${encodeURIComponent(mensaje)}`;
+const url = `https://wa.me/573204527480?text=${encodeURIComponent(mensaje)}`;
 window.open(url, "_blank");
 
 
@@ -157,7 +157,7 @@ NUEVA SOLICITUD DE COTIZACIÓN - LÁCTEOS LA MONA
 ${datosCotizacionTemp.descripcion}
 `;
 
-const url = `https://wa.me/573023416912?text=${encodeURIComponent(mensaje)}`;
+const url = `https://wa.me/573204527480?text=${encodeURIComponent(mensaje)}`;
 window.open(url, "_blank");
 
 
