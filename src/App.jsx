@@ -200,7 +200,7 @@ window.open(url, "_blank");
     imagen={leche}
     nombre="Leche por Litro"
     descripcion="Leche fresca por litro, pedidos por encargo"
-    precio={3000}
+    precio={3500}
     boton="Seleccionar Cantidad"
     onClick={() => setMostrarModalLeche(true)}
   />
